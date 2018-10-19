@@ -75,6 +75,23 @@ export const asyncRouterMap = [
     }]
   },
   {
+    path: '/demo',
+    component: Layout,
+    redirect: 'noredirect',
+    meta: { title: 'demo', icon: 'demo' },
+    children: [{
+      path: 'index',
+      component: () => import('@/views/demo/index'),
+      name: 'demo',
+      meta: { title: 'demo', icon: 'demo', noCache: true }
+    }, {
+      path: 'goods',
+      component: () => import('@/views/demo/goods'),
+      name: 'goodsDemo',
+      meta: { title: 'goodsDemo', icon: 'demo', noCache: true }
+    }]
+  },
+  {
     path: '/check',
     component: Layout,
     redirect: 'noredirect',
